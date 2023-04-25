@@ -1,0 +1,143 @@
+.vp-who-section {
+  position: relative;
+  background: url('../images/sections/phone-bg-new.webp') bottom 280px right
+      no-repeat,
+    url('../images/sections/confetti-bg.webp') top -380px center no-repeat;
+  padding-top: 206px;
+  padding-bottom: 240px;
+
+  @include m-phone() {
+    margin-bottom: -80px;
+  }
+
+  @include m-custom(1980px) {
+    background: url('../images/sections/phone-bg-new.webp') bottom 280px right -100px
+        no-repeat,
+      url('../images/sections/confetti-bg.webp') top -380px center no-repeat;
+    background-size: 40% auto, cover;
+  }
+
+  .btn-primary {
+    min-width: 500px;
+    margin-top: 70px;
+  }
+
+  .cta-block {
+    @include m-phone() {
+      max-width: 80% !important;
+    }
+  }
+  &__btn {
+    @include m-phone() {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(156.67deg, #ffdfb9 -11.63%, #f3bb77 70.92%),
+        linear-gradient(
+          274.27deg,
+          rgba(255, 255, 255, 0) -14.6%,
+          rgba(255, 255, 255, 0.21) 39.52%,
+          rgba(255, 255, 255, 0) 110.6%
+        );
+    }
+  }
+
+  &__title {
+    font-size: 100px;
+    line-height: 100px;
+    text-transform: uppercase;
+    font-family: 'Druk Cyr';
+    margin-bottom: 60px;
+
+    @include m-phone() {
+      font-size: 44px;
+      line-height: 44px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  }
+
+  &__redBox {
+    background: #ff2726;
+    padding: 28px;
+    color: #fff;
+    border-radius: 10px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -122px;
+    width: 506px;
+    height: 595px;
+    background: url('../images/decor-line-red.webp') no-repeat center;
+    z-index: 10;
+  }
+
+  .steps-list-item {
+    padding-bottom: 60px;
+    padding-right: 30px;
+    padding-top: 30px;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+
+    h3 {
+      font-size: 70px;
+      font-family: 'Druk Cyr';
+      line-height: 70px;
+      text-transform: uppercase;
+
+      @include m-phone() {
+        font-size: 40px;
+        line-height: 40px;
+        margin-top: 5px;
+      }
+    }
+
+    &:nth-child(even) {
+      padding-left: 40px;
+      border-right: none;
+    }
+
+    &:nth-last-of-type(-n + 2) {
+      border-bottom: none;
+    }
+  }
+
+  .steps-list {
+    max-width: 878px;
+    margin-bottom: 26px;
+
+    @include m-phone() {
+      gap: 22px;
+    }
+
+    @include m-custom(1200px) {
+      max-width: 782px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25px;
+      color: #0e0e0e;
+      padding-top: 10px;
+      max-width: 370px;
+    }
+
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    & + p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 140%;
+      color: #0e0e0e;
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,448 @@
+.tarifs {
+  margin-top: 40px;
+  padding: 0 13%;
+
+  @media screen and (max-width: 992px) {
+    padding: 10%;
+  }
+
+  @media screen and (max-width: 430px) {
+    padding: 0 20px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    width: 120px;
+
+    @media screen and (max-width: 992px) {
+      width: 60px;
+    }
+  }
+
+  &__title {
+    font-family: 'Druk Cyr';
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 120px;
+    font-size: 96px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 992px) {
+      font-size: 46px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__itemList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0px 1px 12px 0px #00000036;
+    border-radius: 10px;
+    padding-top: 100px;
+    padding-bottom: 14px;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 992px) {
+      padding-top: 30px;
+    }
+
+    &-2 {
+      color: #fff;
+      background: #c20907;
+
+      .tarifs {
+        &__subtitle {
+          color: #ffffff;
+        }
+
+        &__button {
+          background: linear-gradient(
+            156.67deg,
+            #ffdfb9 -11.63%,
+            #f3bb77 70.92%
+          ) !important;
+          color: #000;
+        }
+
+        &__oldPrice {
+          color: #8a0000;
+        }
+
+        &__bottomText {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    font-family: 'Druk Cyr';
+    font-weight: 900;
+    font-size: 78px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 992px) {
+      margin-bottom: 20px;
+      font-size: 38px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 76px;
+    font-size: 20px;
+    font-family: 'Muller';
+
+    @media screen and (max-width: 992px) {
+      padding: 0 36px;
+      font-size: 13px;
+    }
+  }
+
+  &__priceBlock {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-family: 'Druk Cyr Medium';
+      font-weight: 100;
+    }
+  }
+
+  &__price {
+    font-family: 'Druk Cyr';
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 43px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 48px;
+
+    }
+  }
+
+  &__oldPrice {
+    color: #979797;
+    text-decoration: line-through;
+    font-family: 'Druk Cyr';
+    font-weight: 900;
+    font-size: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: -20px;
+
+    @media screen and (max-width: 992px) {
+      line-height: 22px;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-self: center;
+    width: 80%;
+    background: linear-gradient(
+      90deg,
+      #0e0e0e 8.45%,
+      #595959 57.56%,
+      #0e0e0e 100%
+    ) !important;
+    border-bottom: none !important;
+  }
+
+  &__bottomText {
+    font-family: Muller;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #868686;
+    padding: 0 26px;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  &__popup-bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 55;
+  }
+
+  &__inputsBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__close {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 27px;
+  }
+
+  &__second-popup {
+    height: 205px;
+    position: fixed;
+    z-index: 60;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 80%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 27px;
+    padding-top: 31px;
+  }
+
+  &__inputBlock {
+    position: relative;
+
+    // input[value=''] {
+    //   display: none;
+    // }
+    margin-bottom: 10px;
+
+    &:focus-within {
+      .tarifs__label {
+        display: none;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    height: max-content;
+    pointer-events: none;
+
+    &::after {
+      content: '*';
+      color: #ff2726;
+    }
+  }
+
+  &__input {
+    height: 66px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    outline: none;
+    border: none;
+    background: #f4f4f4;
+    border-radius: 4px;
+    width: 100%;
+
+    @media screen and (max-width: 992px) {
+      height: 50px;
+    }
+  }
+
+  &__popup-title {
+    font-family: Druk Cyr;
+    font-size: 62px;
+    font-weight: 900;
+    letter-spacing: 0em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 40px;
+
+      line-height: 40px;
+    }
+  }
+
+  &__button-submit {
+    margin-top: 20px;
+  }
+
+  &__popupFirst {
+    position: fixed;
+    z-index: 60;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 645px;
+    height: min-content;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+
+    @media screen and (max-width: 992px) {
+      width: 80%;
+
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 27px;
+      padding-top: 31px;
+    }
+    @include m-phone() {
+      width: 90%;
+    }
+
+    .js-after-order-1 {
+      display: none;
+    }
+  }
+
+  &__popup-description {
+    font-family: Montserrat;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0 auto;
+    margin-top: 27px;
+    width: 360px;
+    text-align: center;
+    color: #0e0e0e;
+
+    @media screen and (max-width: 992px) {
+      font-size: 12px;
+      margin-top: 8px;
+      line-height: 16px;
+      width: auto;
+    }
+  }
+}
+
+.tarifs {
+  &__after-block {
+    text-align: center;
+
+    h3 {
+      font-size: 60px;
+      font-weight: 900;
+      font-family: Druk Cyr;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 992px) {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 14px;
+      }
+    }
+  }
+
+  &__popupDescription {
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    margin-top: 26px;
+    max-width: 492px;
+
+    @media screen and (max-width: 992px) {
+      margin-bottom: 20px;
+      margin-top: 0;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__popupCase {
+    padding: 8px 27px;
+    background-color: #2a2a2a;
+    width: fit-content;
+    border-radius: 30px;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 auto;
+
+    @media screen and (max-width: 992px) {
+      font-size: 12px;
+      line-height: 18px;
+      margin-bottom: 23px;
+      padding: 3px 19px;
+    }
+  }
+
+  &__notToLeft {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    font-family: 'Muller';
+    text-transform: uppercase;
+    margin-top: 32px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 11px;
+      line-height: 12px;
+      margin: 0;
+      margin-top: 8px;
+    }
+  }
+
+  &__endCourse {
+    font-size: 20px;
+    font-weight: bold;
+
+    @media screen and (max-width: 992px) {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
+}

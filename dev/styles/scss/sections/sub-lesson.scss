@@ -1,0 +1,21 @@
+.vp-sub-lesson {
+  margin-bottom: 152px;
+
+  .card {
+    max-width: 1596px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0px 15px 80px rgba(0, 0, 0, 0.08),
+      0px 6.26664px 33.4221px rgba(0, 0, 0, 0.0575083),
+      0px 3.35045px 17.869px rgba(0, 0, 0, 0.0476886),
+      0px 1.87823px 10.0172px rgba(0, 0, 0, 0.04),
+      0px 0.997515px 5.32008px rgba(0, 0, 0, 0.0323114),
+      0px 0.415088px 2.21381px rgba(0, 0, 0, 0.0224916);
+    border-radius: 10px;
+    border: none;
+
+    .card-body {
+      padding: 92px 80px 146px;
+    }
+  }
+}

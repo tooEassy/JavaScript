@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;900&display=swap');
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/muller/MullerBold.eot');
+  src: local('Muller Bold'), local('MullerBold'),
+  url('../fonts/muller/MullerBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/muller/MullerBold.woff2') format('woff2'),
+  url('../fonts/muller/MullerBold.woff') format('woff'),
+  url('../fonts/muller/MullerBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/muller/MullerRegular.eot');
+  src: local('Muller Regular'), local('MullerRegular'),
+  url('../fonts/muller/MullerRegular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/muller/MullerRegular.woff2') format('woff2'),
+  url('../fonts/muller/MullerRegular.woff') format('woff'),
+  url('../fonts/muller/MullerRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Druk Cyr';
+  src: local('Druk Cyr Bold'), local('Druk-Cyr-Bold'),
+    url('../fonts/druk-cyr/DrukCyr-Bold.woff2') format('woff2'),
+    url('../fonts/druk-cyr/DrukCyr-Bold.woff') format('woff'),
+    url('../fonts/druk-cyr/DrukCyr-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Druk Cyr Medium';
+  src: local('Druk Cyr Medium'), local('Druk-Cyr-Medium'),
+    url('../fonts/druk-cyr/DrukCyr-Medium.woff2') format('woff2'),
+    url('../fonts/druk-cyr/DrukCyr-Medium.woff') format('woff'),
+    url('../fonts/druk-cyr/DrukCyr-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

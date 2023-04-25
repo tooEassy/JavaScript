@@ -1,0 +1,51 @@
+.vp-text-section {
+  background: linear-gradient(
+    270deg,
+    #d80023 -26.27%,
+    #fc2144 30.29%,
+    #d80023 66.22%,
+    #ff0000 126.54%
+  );
+  border-radius: 10px;
+  padding: 140px 0 95px;
+  position: relative;
+
+  > .container {
+    padding-left: 402px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 694px;
+    height: 1016px;
+    background: url('../images/sections/dollar-bg.webp') left center no-repeat;
+    margin-top: -104px;
+  }
+
+  svg {
+    margin-bottom: 40px;
+    display: block;
+    max-width: 100%;
+  }
+
+  p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 140%;
+    color: #ffffff;
+
+    @include m-phone() {
+      max-width: 177px;
+      font-size: 12px !important;
+      margin: 0 auto;
+      margin-top: -20px;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+
+.button {
+	position: relative;
+	-webkit-appearance: none;
+	outline: none;
+	border-radius: 10px;
+	border: none;
+	height: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+	font-size: 24px;
+	transition: $trsn;
+  padding: 0 20px;
+	cursor: pointer;
+	font-family: 'Muller';
+	overflow: hidden;
+	width: 100%;
+  
+	@include m-phone() {
+		height: 54px;
+		font-size: 20px;
+		padding-top: 0px;
+	}
+
+	&[disabled] {
+		background-color: #9FA8B0;
+		color: #fff;
+		cursor: initial;
+		pointer-events: none;
+	}
+	span, svg {
+		position: relative;
+		z-index: 3;
+	}
+	&_white {
+		background-color: #fff;
+		text-align: center;
+		color: $color_text;
+		@include hover() {
+			background-color: $color_text;
+			color: #fff;
+		}
+	}
+	&_black {
+		background-color: $color_text;
+		color: #fff;
+		&:not(.no-hover) {
+			@include hover() {
+				background-color: $color_red;
+				color: #fff;
+			}
+		}
+	}
+	&_red {
+		color: #fff;
+		background-color: $color_red;
+		transform: translateZ(0);
+		isolation: isolate;
+		-webkit-mask-image: -webkit-radial-gradient(white, black);
+		img {
+			margin-left: 45px;
+			@include m-phone() {
+				margin-left: 15px;
+			}
+		}
+		&:not(.no-hover) {
+			@include hover() {
+				background-color: $color_text;
+				color: #fff;
+			}
+		}
+	}
+
+	&_empty {
+		color: $color_text;
+		border: 1px solid currentColor;
+		background-color: transparent;
+		span {
+			transition: $trsn;
+		}
+		@include hover() {
+			background-color: currentColor;
+			span {
+				color: #fff;
+			}
+		}
+	}
+	&_gradient {
+		color: #fff;
+		transform: translateZ(0);
+		isolation: isolate;
+		-webkit-mask-image: -webkit-radial-gradient(white, black);
+		height: 64px;
+		font-size: 18px;
+		&:before {
+			position: absolute;
+			content: '';
+			width: 600%;
+			height: 100%;
+			// background: linear-gradient(45deg, #CE66FF 6.84%, #FF5266 20.64%, #FFB54D 32.79%, #E8FF75 46.6%, #FFB54D 58.75%, #FF5266 71.45%, #CE66FF 84.71%, #8593FF 97.96%);
+			background: linear-gradient(45deg, #8593FF 6.08%, #CE66FF 10.33%, #FF5266 17.88%, #FFB54D 23.54%, #E8FF75 32.04%, #FFB54D 40.53%, #FF5266 49.02%, #CE66FF 57.05%, #8593FF 66.96%, #CE66FF 74.04%, #FF5266 81.59%, #FFB54D 89.61%, #E8FF75 96.69%);
+			top: 0;
+			left: 0;
+			z-index: 1;
+			transition: 10s;
+			background-size: 100% 100%;
+			background-repeat: repeat-x;
+			@include m-phone() {
+				width: 400%;
+			}
+		}
+		@include hover() {
+			&:before {
+				transform: translateX(-66%);
+				// animation: gradient 15s linear infinite;
+			}
+		}
+	}
+	&_blue {
+		&:before {
+			width: 200%;
+			background: linear-gradient(265.39deg, #71CFF4 0, #4583E0 50%,  #71CFF4 100%);
+		}
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

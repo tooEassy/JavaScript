@@ -1,0 +1,119 @@
+.pay {
+  &__block {
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    align-items: center;
+    height: 750px;
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 7%;
+    padding-right: 7%;
+
+    @include m-phone() {
+      display: flex;
+      flex-direction: column;
+
+      height: 100vh;
+    }
+
+    p {
+      width: 600px;
+      font-size: 20px;
+
+      @include m-phone() {
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__innerBlock {
+    @include m-phone() {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    font-size: 94px;
+    line-height: 94px;
+    font-family: 'Druk Cyr';
+    text-transform: uppercase;
+    margin-bottom: 50px;
+
+    @include m-phone() {
+      font-size: 43px;
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 43px;
+    }
+
+    span {
+      color: #ff2726;
+    }
+  }
+
+  &__btn {
+    margin-top: 100px;
+    width: min-content;
+    margin-bottom: 20px;
+
+    @include m-phone() {
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    &-success {
+      margin-top: 50px;
+
+      @include m-phone() {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__firstDesc {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__teh {
+    color: #0e0e0e;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+
+    &:hover {
+      color: #0e0e0e;
+    }
+
+    @include m-phone() {
+      text-align: center;
+    }
+  }
+
+  &__red {
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    width: 100%;
+
+    @include m-phone() {
+      display: none;
+    }
+  }
+
+  &__face {
+    max-width: 100%;
+
+    @include m-phone() {
+      width: 45vw;
+      margin: 0 auto;
+    }
+  }
+}
