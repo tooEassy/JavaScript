@@ -9342,6 +9342,7 @@ a.text-dark:hover, a.text-dark:focus {
   line-height: 94px;
   text-transform: uppercase;
   max-width: 670px;
+  margin-bottom: 30px;
 }
 .vp-hero-section .title span {
   color: #ff2726;
@@ -9363,6 +9364,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 .vp-hero-section__pidChas {
+  display: none;
   width: 300px;
 }
 @media (max-width: 1023px) {

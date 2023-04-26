@@ -133,7 +133,7 @@ let serve = () => {
     },
   })
 
-  watch(`dev/scripts/*.js`, series(lintJS, transpileJSForDev))
+  watch(`dev/scripts/*.js`, series(transpileJSForDev))
     .on(`change`, reload)
 
   watch(`dev/styles/scss/**/*.scss`, compileCSSForDev)
@@ -225,7 +225,7 @@ exports.lintCSS = lintCSS
 exports.serve = series(
   // validateHTML,
   compileCSSForDev,
-  lintJS,
+  // lintJS,
   transpileJSForDev,
   serve,
 )

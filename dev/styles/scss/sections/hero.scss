@@ -108,6 +108,7 @@
     line-height: 94px;
     text-transform: uppercase;
     max-width: 670px;
+    margin-bottom: 30px;
 
     span {
       color: #ff2726;
@@ -129,6 +130,7 @@
   }
 
   &__pidChas {
+    display: none;
     width: 300px;
 
     @include m-tablet() {
