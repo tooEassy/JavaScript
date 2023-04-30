@@ -207,6 +207,14 @@
                   alert("Дякую! Скоро менеджер з Вами зв'яжеться");
                 }
               );
+
+              $.post(
+                "https://pay.voloshyn.site/5/api-clients-add-tag",
+                {cid: cid, tag: "business.nexxvel.com"},
+                function () {
+                  
+                }
+              );
             }
           );
         }
