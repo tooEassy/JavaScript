@@ -139,35 +139,37 @@
   <script type="text/javascript" src="./scripts/lesson.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
-      var client_4_id = false;
-      var url = new URL(document.location.href);
-      var phone = url.searchParams.get("phone");
-      var email = url.searchParams.get("email");
-
-      if (phone || email) {
-        console.log(phone);
-        console.log(email);
-        $.post(
-          "https://pay.voloshyn.site/4/api/find_client?prefix_pid=4",
-          {phone: phone, email: email},
-          function (data) {
-            console.log(data.cid);
-            client_4_id = data.cid;
-          },
-          "json"
-        );
-
-        var interval = setInterval(function () {
-          if (client_4_id) {
-            $.post(
-              "https://pay.voloshyn.site/4/api-clients-change-status",
-              {cid: client_4_id, new_status: "start_view"},
-              function () { }
-            );
-            clearInterval(interval);
-          }
-        }, 1000);
-      }
+      var urlParams = new URLSearchParams(window.location.search);
+      var cid = urlParams.get("cid");
+      // var client_4_id = false;
+      // var url = new URL(document.location.href);
+      // var phone = url.searchParams.get("phone");
+      // var email = url.searchParams.get("email");
+      //
+      // if (phone || email) {
+      //   console.log(phone);
+      //   console.log(email);
+      //   $.post(
+      //     "https://pay.voloshyn.site/4/api/find_client?prefix_pid=4",
+      //     {phone: phone, email: email},
+      //     function (data) {
+      //       console.log(data.cid);
+      //       client_4_id = data.cid;
+      //     },
+      //     "json"
+      //   );
+      //
+      //   var interval = setInterval(function () {
+      //     if (client_4_id) {
+      //       $.post(
+      //         "https://pay.voloshyn.site/4/api-clients-change-status",
+      //         {cid: client_4_id, new_status: "start_view"},
+      //         function () { }
+      //       );
+      //       clearInterval(interval);
+      //     }
+      //   }, 1000);
+      // }
 
       $("#js-order-form").on("submit", function (e) {
         e.preventDefault();
@@ -181,11 +183,12 @@
         var phone = form.find('input[name="phone"]');
 
         var error = false;
-        // Валидация
+
         if (!name.val()) {
           error = true;
           $(".js-error-name").css("display", "block");
         }
+
         if (!phone.val()) {
           error = true;
           $(".js-error-phone").css("display", "block");
@@ -193,18 +196,17 @@
 
         if (!error) {
           $.post(
-            "https://pay.voloshyn.site/3/api/add_client?prefix_pid=3&no_email=1",
-            form.serializeArray(),
-            function (data) {
-              alert("Дякую! Наш менеджер скоро зв'яжеться з вами");
-            },
-            "json"
-          );
-
-          $.post(
-            "https://pay.voloshyn.site/4/api-clients-change-status",
-            {cid: client_4_id, new_status: "make_order"},
-            function () { }
+            "https://pay.voloshyn.site/5/api-clients-change-status",
+            {cid: cid, new_status: "make_order"},
+            function () {
+              $.post(
+                "https://pay.voloshyn.site/5/api-clients-add-comment",
+                {cid: cid, text: "Клиент оформил заявку. Имя: "+name.val()+"; Телефон: "+phone.val()},
+                function () {
+                  alert("Дякую! Скоро менеджер з Вами зв'яжеться"); 
+                }
+              );
+            }
           );
         }
       });

@@ -14,35 +14,37 @@
                   font-size: 0.75rem;
                   color: red;
                   display: none;" class="js-error-phone">Введіть корректний номер телефону</span> <img src="./images/book-place/phone-icon.webp" alt="phone" width="20px" height="20px" class="bookPlace__icon"></label><div class="bookPlace__popup-btnBlock"><button class="btn btn-primary bookPlace__popup-btn">Залишити заявку</button><p>Натискаючи на кнопку ви погоджуєтесь з <a href="/policy.html" target="_blank">умовами обробки даних та політикою конфіденційності</a></p></div></form></div></div></div><script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script><script type="text/javascript" src="./scripts/modules/player/player.js" defer="defer"></script><script type="text/javascript" src="./scripts/index.js"></script><script type="text/javascript" src="./scripts/lesson.js"></script><script type="text/javascript">$(document).ready(function () {
-      var client_4_id = false;
-      var url = new URL(document.location.href);
-      var phone = url.searchParams.get("phone");
-      var email = url.searchParams.get("email");
-
-      if (phone || email) {
-        console.log(phone);
-        console.log(email);
-        $.post(
-          "https://pay.voloshyn.site/4/api/find_client?prefix_pid=4",
-          {phone: phone, email: email},
-          function (data) {
-            console.log(data.cid);
-            client_4_id = data.cid;
-          },
-          "json"
-        );
-
-        var interval = setInterval(function () {
-          if (client_4_id) {
-            $.post(
-              "https://pay.voloshyn.site/4/api-clients-change-status",
-              {cid: client_4_id, new_status: "start_view"},
-              function () { }
-            );
-            clearInterval(interval);
-          }
-        }, 1000);
-      }
+      var urlParams = new URLSearchParams(window.location.search);
+      var cid = urlParams.get("cid");
+      // var client_4_id = false;
+      // var url = new URL(document.location.href);
+      // var phone = url.searchParams.get("phone");
+      // var email = url.searchParams.get("email");
+      //
+      // if (phone || email) {
+      //   console.log(phone);
+      //   console.log(email);
+      //   $.post(
+      //     "https://pay.voloshyn.site/4/api/find_client?prefix_pid=4",
+      //     {phone: phone, email: email},
+      //     function (data) {
+      //       console.log(data.cid);
+      //       client_4_id = data.cid;
+      //     },
+      //     "json"
+      //   );
+      //
+      //   var interval = setInterval(function () {
+      //     if (client_4_id) {
+      //       $.post(
+      //         "https://pay.voloshyn.site/4/api-clients-change-status",
+      //         {cid: client_4_id, new_status: "start_view"},
+      //         function () { }
+      //       );
+      //       clearInterval(interval);
+      //     }
+      //   }, 1000);
+      // }
 
       $("#js-order-form").on("submit", function (e) {
         e.preventDefault();
@@ -56,11 +58,12 @@
         var phone = form.find('input[name="phone"]');
 
         var error = false;
-        // Валидация
+
         if (!name.val()) {
           error = true;
           $(".js-error-name").css("display", "block");
         }
+
         if (!phone.val()) {
           error = true;
           $(".js-error-phone").css("display", "block");
@@ -68,18 +71,17 @@
 
         if (!error) {
           $.post(
-            "https://pay.voloshyn.site/3/api/add_client?prefix_pid=3&no_email=1",
-            form.serializeArray(),
-            function (data) {
-              alert("Дякую! Наш менеджер скоро зв'яжеться з вами");
-            },
-            "json"
-          );
-
-          $.post(
-            "https://pay.voloshyn.site/4/api-clients-change-status",
-            {cid: client_4_id, new_status: "make_order"},
-            function () { }
+            "https://pay.voloshyn.site/5/api-clients-change-status",
+            {cid: cid, new_status: "make_order"},
+            function () {
+              $.post(
+                "https://pay.voloshyn.site/5/api-clients-add-comment",
+                {cid: cid, text: "Клиент оформил заявку. Имя: "+name.val()+"; Телефон: "+phone.val()},
+                function () {
+                  alert("Дякую! Скоро менеджер з Вами зв'яжеться"); 
+                }
+              );
+            }
           );
         }
       });
