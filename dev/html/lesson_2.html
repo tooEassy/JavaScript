@@ -189,7 +189,7 @@
           $(".js-error-name").css("display", "block");
         }
 
-        if (!phone.val()) {
+        if (phone.val().length < 5) {
           error = true;
           $(".js-error-phone").css("display", "block");
         }
@@ -203,7 +203,7 @@
                 "https://pay.voloshyn.site/5/api-clients-add-comment",
                 {cid: cid, text: "Клиент оформил заявку. Имя: "+name.val()+"; Телефон: "+phone.val()},
                 function () {
-                  alert("Дякую! Скоро менеджер з Вами зв'яжеться"); 
+                  alert("Дякую! Скоро менеджер з Вами зв'яжеться");
                 }
               );
             }
