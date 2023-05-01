@@ -12049,12 +12049,14 @@ a.text-dark:hover, a.text-dark:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 8vw;
-  font-size: 4vw !important;
+  height: 6vw;
+  font-size: 3vw !important;
   line-height: 5vw !important;
+  letter-spacing: 0.3vw !important;
   font-family: "Druk Cyr" !important;
   width: 100%;
   position: relative;
+  padding: 0 !important;
 }
 @media (max-width: 767px) {
   .bookPlace__bigButton {
@@ -12073,7 +12075,7 @@ a.text-dark:hover, a.text-dark:focus {
   right: 1vw;
 }
 .bookPlace__bigButton img:nth-child(2) {
-  width: 38px;
+  width: 3vw;
   position: absolute;
   top: 0vw;
   left: 1vw;
@@ -12287,10 +12289,13 @@ a.text-dark:hover, a.text-dark:focus {
   margin-left: 27px;
   color: #fff;
   width: 50vw;
-  font-size: 4vw;
+  font-size: 3vw;
   font-family: "Druk Cyr";
   text-transform: uppercase;
   border-radius: 20px;
+  height: 6vw;
+  padding: 0 !important;
+  letter-spacing: 0.3vw !important;
 }
 .bookPlace__blackButton:hover {
   opacity: 0.8;
@@ -12313,8 +12318,8 @@ a.text-dark:hover, a.text-dark:focus {
   right: 1vw;
   top: -1vw;
   z-index: 2;
-  width: 28px;
-  height: 51px;
+  width: 3vw;
+  height: 5vw;
 }
 @media (max-width: 767px) {
   .bookPlace__signBlack {

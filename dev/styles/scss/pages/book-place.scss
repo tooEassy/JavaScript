@@ -93,12 +93,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 8vw;
-    font-size: 4vw !important;
+    height: 6vw;
+    font-size: 3vw !important;
     line-height: 5vw !important;
+    letter-spacing: 0.3vw !important;
     font-family: 'Druk Cyr' !important;
     width: 100%;
     position: relative;
+    padding: 0 !important;
 
     @include m-phone() {
       display: none;
@@ -116,7 +118,7 @@
         right:1vw ;
       }
       &:nth-child(2){
-        width: 38px;
+        width: 3vw;
         position: absolute;
         top: 0vw;
         left: 1vw;
@@ -370,10 +372,13 @@
     margin-left: 27px;
     color: #fff;
     width: 50vw;
-    font-size: 4vw;
+    font-size: 3vw;
     font-family: 'Druk Cyr';
     text-transform: uppercase;
     border-radius: 20px;
+    height: 6vw;
+    padding: 0 !important;
+    letter-spacing: 0.3vw !important;
 
     &:hover {
       opacity: 0.8;
@@ -399,8 +404,8 @@
       right: 1vw;
       top: -1vw;
       z-index: 2;
-      width: 28px;
-      height: 51px;
+      width: 3.0vw;
+      height: 5vw;
 
       @include m-phone(){
         display: none;
