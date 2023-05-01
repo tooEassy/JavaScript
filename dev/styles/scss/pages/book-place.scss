@@ -63,7 +63,7 @@
 
   &__iframeBlock {
     height: 46vw;
-    margin-bottom: 5vw;
+    margin-bottom: 3vw;
 
     @include m-phone() {
       height: 221px;
@@ -93,8 +93,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 11vw;
-    font-size: 5vw !important;
+    height: 8vw;
+    font-size: 4vw !important;
     line-height: 5vw !important;
     font-family: 'Druk Cyr' !important;
     width: 100%;
