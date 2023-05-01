@@ -153,8 +153,10 @@ $(document).ready(function () {
     $('.js-tarifs-phone').css({
       display: 'block'
     });
-    var id = $(this).data('id');
-    $('#tariff_id').val(id);
+
+    // var id = $(this).data('id');
+    // $('#tariff_id').val(id);
+
     $('#tarifs-first-popup').css({
       opacity: '1',
       visibility: 'visible'
@@ -236,9 +238,8 @@ $(document).ready(function () {
       $('.js-error-email').css('display', 'block');
     }
     if (!error) {
-      return false;
       // Post request
-      $.post('https://pay.voloshyn.site/4/api/add_client?get_pay_form=1&prefix_pid=1', form.serializeArray(), function (data) {
+      $.post('https://pay.voloshyn.site/5/api/add_client?get_pay_form=1&prefix_pid=5', form.serializeArray(), function (data) {
         if (data.status == 'error') {
           $.each(data.error, function (i, v) {
             if (i == 'name') {

@@ -12018,7 +12018,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .bookPlace__iframeBlock {
   height: 46vw;
-  margin-bottom: 5vw;
+  margin-bottom: 3vw;
 }
 @media (max-width: 767px) {
   .bookPlace__iframeBlock {
@@ -12049,8 +12049,8 @@ a.text-dark:hover, a.text-dark:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 11vw;
-  font-size: 5vw !important;
+  height: 8vw;
+  font-size: 4vw !important;
   line-height: 5vw !important;
   font-family: "Druk Cyr" !important;
   width: 100%;
@@ -12256,11 +12256,6 @@ a.text-dark:hover, a.text-dark:focus {
     margin-bottom: 12px;
   }
 }
-@media (max-width: 767px) {
-  .bookPlace__phone {
-    display: none;
-  }
-}
 .bookPlace__input {
   background: #efefef;
   width: 100%;
@@ -12291,7 +12286,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-bottom: 6px solid #0E0E0E;
   margin-left: 27px;
   color: #fff;
-  width: 40vw;
+  width: 50vw;
   font-size: 4vw;
   font-family: "Druk Cyr";
   text-transform: uppercase;
