@@ -11812,6 +11812,110 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.newFooter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #000;
+  border-bottom: 1px solid #000;
+  padding-bottom: 60px;
+  margin-bottom: 20px;
+  gap: 20%;
+}
+@media (max-width: 767px) {
+  .newFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    gap: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+.newFooter__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+@media (max-width: 767px) {
+  .newFooter__wrapper {
+    margin-top: 40px;
+  }
+}
+.newFooter__rightSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+@media (max-width: 767px) {
+  .newFooter__rightSection {
+    margin-top: 0;
+  }
+}
+.newFooter__rightSection h3 {
+  font-weight: 600;
+  margin-bottom: 38px;
+  font-size: 16px;
+}
+.newFooter__rightSection a {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+@media (max-width: 767px) {
+  .newFooter__rightSection a {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .newFooter__leftSection {
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    font-size: 11px;
+  }
+}
+.newFooter__telegramLogo {
+  margin-right: 12px;
+}
+.newFooter__logo {
+  margin-bottom: 27px;
+}
+@media (max-width: 767px) {
+  .newFooter__logo {
+    width: 125px;
+    margin-bottom: 24px;
+  }
+}
+.newFooter__telegram {
+  display: flex;
+  align-items: center;
+  color: #000;
+  width: max-content;
+}
+@media (max-width: 767px) {
+  .newFooter__telegram {
+    font-size: 11px;
+  }
+}
+.newFooter__telegram p {
+  margin-bottom: 0;
+}
+.newFooter__bottom {
+  color: #000;
+}
+@media (max-width: 767px) {
+  .newFooter__bottom {
+    font-size: 11px;
+    font-weight: bold;
+  }
+}
+
 .button {
   position: relative;
   -webkit-appearance: none;
