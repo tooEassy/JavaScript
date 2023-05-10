@@ -8,12 +8,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./scripts/modules/fancybox/jquery.fancybox.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
 
+  <script type="text/javascript" src="./scripts/modules/fancybox/jquery.fancybox.min.js"></script>
   <script type="text/javascript" src="./scripts/modules/player/player.js" defer></script>
   <script type="text/javascript" src="./scripts/modules/mask2/mask_list.js" defer></script>
   <script type="text/javascript" src="./scripts/modules/mask2/mask.js" defer></script>
@@ -80,9 +82,16 @@
       <!--<img class="hero-label date-label" src="images/label-data.svg" alt="" loading="lazy"/>-->
 
       <div class="vp-hero-section__top">
-          <p class='title-description d-md-block d-none'>Покроковий урок по запуску товарної справи</p>
-          <h1 class='title'>Створи власний онлайн бізнес та <span>збільш свій дохід у</span>  декілька разів</h1>
-          <p class='title-description d-block d-md-none'>Покроковий урок по запуску товарної справи</p>
+        <p class="title-description d-md-block d-none">
+          Покроковий урок по запуску товарної справи
+        </p>
+        <h1 class="title">
+          Створи власний онлайн бізнес та
+          <span>збільш свій дохід у</span> декілька разів
+        </h1>
+        <p class="title-description d-block d-md-none">
+          Покроковий урок по запуску товарної справи
+        </p>
         <!-- <p>Покроковий урок по запуску</p> -->
         <!-- <h1 class="title"> -->
         <!--   свого онлайн-бізнесу Із прибутком -->
@@ -711,7 +720,7 @@
       </div>
     </div>
 
-    <div class="vp-tariff-panel vp-tariff-panel-premium mb-5" style="display: none">
+    <div class="vp-tariff-panel vp-tariff-panel-premium mb-5">
       <div class="row align-items-center w-md-100">
         <div class="col-12 col-md-8">
           <h3>Тариф преміум</h3>
@@ -720,17 +729,21 @@
               Урок «Покроковий план запуску власного бізнесу під час війни без
               вкладень»
             </li>
-            <li>бонусні чек-листи</li>
-            <li>Прямий ефір “питання-відповідь” від Олександра Волошина.</li>
+            <li>Бібіліотека з 40+ додаткових матеріалів</li>
+            <li>Супровід наставника протягом місяця</li>
+            <li>
+              4 додаткові ефіри з експертами по вибору ніші, упаковки, таргету
+              та продажам
+            </li>
           </ul>
         </div>
         <div class="col-12 col-md-4">
-          <p class="tarifs__oldPrice">20$</p>
-          <h3 class="price">14$</h3>
-          <div class="btn btn-gold btn-block js-standart-button" data-id="19">
+          <p class="tarifs__oldPrice">190$</p>
+          <h3 class="price">89$</h3>
+          <div class="btn btn-gold btn-block" data-fancybox data-src="#error">
             Придбати
           </div>
-          <p class="mt-2 text-center vp-tariff-panel__bottomText">
+          <p class="mt-2 text-center vp-tariff-panel__bottomText" style="display: none">
             Всього 1000 місць!
           </p>
         </div>
@@ -4775,6 +4788,24 @@
     </div>
   </div>
   <div class="tarifs__popup-bg" id="tarifs__popup-bg"></div>
+
+  <div class="modal modal_small" id="error">
+    <div class="modal__close" data-fancybox-close>
+      <img src="images/close-button.webp" alt="close" width="100%" height="100%" />
+    </div>
+    <div class="modal__wrap">
+      <div class="modal__error">
+        <div class="modal__error-title">УПС 🥺</div>
+        <div class="modal__error-descr">
+          Здається, місця з наставником уже закінчились. Але в нас є для тебе
+          рішення !
+        </div>
+        <div class="modal__error-descr modal__error-descr_mt">
+          Наш менеджер дуже скоро зв‘яжеться з тобою
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,130 @@
+
+.fancybox-close-small {
+	display: none !important;
+}
+.fancybox-slide--iframe .fancybox-content {
+	@include m-phone() {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+.modal {
+	position: relative;
+	max-width: 950px;
+	z-index: 20;
+	display: none;
+	margin: 0;
+	padding: 0;
+	pointer-events: all;
+	background: #fff;
+	overflow: visible;
+	border-radius: 20px;
+	padding: 60px 40px 40px;
+	width: 100%;
+  height: max-content;
+	&_small {
+		max-width: 570px;
+	}
+	@include m-phone() {
+		border-radius: 10px;
+		width: calc(100vw - 30px);
+		max-width: 428px;
+		padding: 55px 20px 35px;
+
+	}
+	&_black {
+		color: #fff;
+		background-color: #2A2A2A;
+		border-radius: 10px;
+		padding: 40px 40px 80px 40px;
+		@include m-tablet() {
+			padding: 25px 25px 80px 25px;
+		}
+		@include m-phone() {
+			padding: 20px;
+		}
+	}
+	&__close {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #111;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+		transition: $trsn;
+		border-radius: 50%;
+		z-index: 3;
+		font-size: 0;
+		padding-top: 2px;
+		svg {
+			width: 16px;
+			height: 16px;
+			stroke: #fff;
+		}
+		@include hover() {
+			background-color: $color_red;
+		}
+	}
+	&__content {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+	&__form {
+		margin-top: 30px;
+		@include m-phone() {
+			margin-top: 18px;
+		}
+		&-descr {
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 25px;
+		}
+	}
+	&__input {
+		display: block;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+	&__submit {
+		display: flex;
+		justify-content: center;
+		margin-top: 28px;
+	}
+	&__descr {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 1.5;
+		margin: 20px 0 27px;
+		@include m-phone() {
+			font-size: 15px;
+		}
+	}
+	&__error {
+		text-align: center;
+		max-width: 365px;
+    height: min-content;
+		margin: 0 auto;
+		&-title {
+			font-family: $font_second;
+			font-size: 28px;
+			margin-bottom: 10px;
+		}
+		&-descr {
+			font-size: 18px;
+			line-height: 1.5;
+			@include m-phone() {
+				font-size: 15px;
+			}
+			&_mt {
+				margin-top: 15px;
+			}
+		}
+	}
+}
