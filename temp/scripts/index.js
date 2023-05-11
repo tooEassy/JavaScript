@@ -1,4 +1,13 @@
 $(document).ready(function () {
+  $('[data-fancybox]').fancybox({
+    autoFocus: false,
+    touch: false,
+    afterClose: function () {
+      $('.js-case-image').removeClass('active');
+    }
+  });
+});
+$(document).ready(function () {
   new LazyLoad({
     elements_selector: '.reviews__content',
     unobserve_entered: true,
@@ -47,13 +56,7 @@ $(document).ready(function () {
   });
   var videoBlocks = $('.js-m-cases-item');
   mask('input[type="tel"]');
-  $('[data-fancybox]').fancybox({
-    autoFocus: false,
-    touch: false,
-    afterClose: function () {
-      $('.js-case-image').removeClass('active');
-    }
-  });
+
   // Для каждого блока получаем продолжительность видео и выводим ее
   videoBlocks.each(function () {
     var block = $(this);
