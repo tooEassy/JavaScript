@@ -168,8 +168,8 @@ $(document).ready(function () {
   $('.js-standart-button').click(function () {
     $('.js-tarifs-phone').css({ display: 'block' })
 
-    // var id = $(this).data('id');
-    // $('#tariff_id').val(id);
+    var id = $(this).data('id');
+    $('#tariff_id').val(id);
 
     $('#tarifs-first-popup').css({ opacity: '1', visibility: 'visible' })
     $('#tarifs__popup-bg').css({ opacity: '1', visibility: 'visible' })
