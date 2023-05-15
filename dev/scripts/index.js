@@ -177,7 +177,37 @@ $(document).ready(function () {
     $('.js-error-name').hide()
     $('.js-error-phone').hide()
     $('.js-error-email').hide()
+
+
+
+
+    $('.tarifs__popup-title-pay').show();
+    $('.js-modal-form').show();
+    $('.js-after-order-2').hide();
+    $('.js-after-order-1').hide();
   })
+
+  $('.js-premium-button').click(function () {
+    $('.js-tarifs-phone').css({ display: 'block' })
+
+    var id = $(this).data('id');
+    $('#tariff_id').val(id);
+
+    $('#tarifs-first-popup').css({ opacity: '1', visibility: 'visible' })
+    $('#tarifs__popup-bg').css({ opacity: '1', visibility: 'visible' })
+
+    $('.js-error-name').hide()
+    $('.js-error-phone').hide()
+    $('.js-error-email').hide()
+
+
+    $('.tarifs__popup-title-pay').show();
+    $('.js-modal-form').show();
+    $('.js-after-order-2').hide();
+    $('.js-after-order-1').hide();
+  })
+
+
 
   $('#tarifs__popup-bg').click(function () {
     $('#tarifs-first-popup').css({ opacity: '0', visibility: 'hidden' })
@@ -256,12 +286,26 @@ $(document).ready(function () {
             })
           }
           if (data.status == 'ok') {
-            var link = data.pay_link
-            $('.js-modal-form').hide()
-            $('.js-after-order-1').show()
-            $('.js-after-order-1 .modal__error-descr').html(data.pay_form)
-            $('.modal__error-title').hide()
+            var link = data.pay_link;
+            if (link == 'no-pay') {
+              $('.tarifs__popup-title-pay').hide();
+              $('.js-modal-form').hide();
+              $('.js-after-order-2').show();
+            } else {
+              $('.js-modal-form').hide();
+              $('.js-after-order-1').show();
+              $('.js-after-order-1 .modal__error-descr').html(data.pay_form);
+              $('.modal__error-title').hide();
+            }
+
           }
+          // if (data.status == 'ok') {
+          //   var link = data.pay_link
+          //   $('.js-modal-form').hide()
+          //   $('.js-after-order-1').show()
+          //   $('.js-after-order-1 .modal__error-descr').html(data.pay_form)
+          //   $('.modal__error-title').hide()
+          // }
         },
         'json',
       )
