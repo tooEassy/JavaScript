@@ -1,9 +1,7 @@
-
 .newFooter {
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: #000;
-  border-bottom: 1px solid #000;
   padding-bottom: 60px;
   margin-bottom: 20px;
   gap: 20%;
@@ -32,12 +30,29 @@
     }
   }
 
+  &__disclaimer {
+    font-size: 14px;
+    line-height: 18px;
+
+    border-bottom: 1px solid #000;
+    padding-bottom: 47px;
+    margin-bottom: 20px;
+
+
+    @include m-phone(){
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      font-size: 11px
+    }
+  }
+
   &__rightSection {
     display: flex;
     flex-direction: column;
     margin-top: 25px;
 
-    @include m-phone(){
+    @include m-phone() {
       margin-top: 0;
     }
 
@@ -86,7 +101,7 @@
     color: #000;
     width: max-content;
 
-    @include m-phone(){
+    @include m-phone() {
       font-size: 11px;
     }
 
