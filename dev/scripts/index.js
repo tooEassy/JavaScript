@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  var url = document.location.href;
+  $('#total_url').val(url);
+});
+$(document).ready(function () {
   $('[data-fancybox]').fancybox({
     autoFocus: false,
     touch: false,
