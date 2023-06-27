@@ -272,7 +272,7 @@ $(document).ready(function () {
     }
     if (!error) {
       // Post request
-      $.post('https://pay.voloshyn.site/5/api/add_client?get_pay_form=1&prefix_pid=5', form.serializeArray(), function (data) {
+      $.post('https://crm.nexvel.education/5/api/add_client?get_pay_form=1&prefix_pid=5', form.serializeArray(), function (data) {
         if (data.status == 'error') {
           $.each(data.error, function (i, v) {
             if (i == 'name') {

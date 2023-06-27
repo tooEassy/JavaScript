@@ -190,7 +190,7 @@
         if (phone || email) {
           console.log(phone);
           console.log(email);
-          $.post('https://pay.voloshyn.site/4/api/find_client?prefix_pid=4', {'phone': phone, 'email': email}, function (data) {
+          $.post('https://crm.nexvel.education/4/api/find_client?prefix_pid=4', {'phone': phone, 'email': email}, function (data) {
             console.log(data.cid);
             client_4_id = data.cid;
           }, 'json');
@@ -198,7 +198,7 @@
 
           var interval = setInterval(function () {
             if (client_4_id) {
-              $.post('https://pay.voloshyn.site/4/api-clients-change-status', {'cid': client_4_id, 'new_status': 'start_view'}, function () {
+              $.post('https://crm.nexvel.education/4/api-clients-change-status', {'cid': client_4_id, 'new_status': 'start_view'}, function () {
 
               })
               clearInterval(interval);
@@ -232,11 +232,11 @@
           }
 
           if (!error) {
-            $.post('https://pay.voloshyn.site/3/api/add_client?prefix_pid=3&no_email=1', form.serializeArray(), function (data) {
+            $.post('https://crm.nexvel.education/3/api/add_client?prefix_pid=3&no_email=1', form.serializeArray(), function (data) {
               alert("Дякую! Наш менеджер скоро зв'яжеться з вами")
             }, 'json')
 
-            $.post('https://pay.voloshyn.site/4/api-clients-change-status', {'cid': client_4_id, 'new_status': 'make_order'}, function () {
+            $.post('https://crm.nexvel.education/4/api-clients-change-status', {'cid': client_4_id, 'new_status': 'make_order'}, function () {
 
             })
           }
