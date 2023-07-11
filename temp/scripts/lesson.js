@@ -9,7 +9,7 @@ $(document).ready(function () {
     var currentTime = data.seconds;
     var lastRequestTime = localStorage.getItem("lastRequestTime") || 0;
     if (currentTime - lastRequestTime > 10) {
-      $.get(`https://crm.nexvel.education/5/api/add_field?cid=${cid}&key=video_duration&value=${currentTime}`, function (response) {
+      $.get(`https://crm.nexvel.education/11/api/add_field?cid=${cid}&key=video_duration&value=${currentTime}`, function (response) {
         // обработка ответа
         console.log(`Запрос отправлен ${currentTime}`);
       });
