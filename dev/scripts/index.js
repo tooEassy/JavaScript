@@ -273,7 +273,7 @@ $(document).ready(function () {
     if (!error) {
       // Post request
       $.post(
-        'https://crm.nexvel.education/11/api/add_client?get_pay_form=1&prefix_pid=5',
+        'https://crm.nexvel.education/11/api/add_client?get_pay_form=1&prefix_pid=11',
         form.serializeArray(),
         function (data) {
           if (data.status == 'error') {
