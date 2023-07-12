@@ -1,4 +1,4 @@
-  <Directory “/home/site/web/nexv-el.com/public_html/prod">
+  <Directory “/home/site/web/nexv-el.com/public_html">
 
     RewriteEngine On
     # Don't rewrite files or directories
