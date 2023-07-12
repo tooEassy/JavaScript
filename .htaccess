@@ -1,0 +1,10 @@
+AddDefaultCharset UTF-8
+RewriteEngine on
+
+#RewriteRule ^sitemap(\d*)\.xml$ sitemap$1.xml [L]
+
+RewriteRule ^(.*)/$ packages/Engine/starter.php [L]
+RewriteRule \.svn packages/Engine/starter.php [L]
+RewriteRule (\.html)$ packages/Engine/starter.php
+RewriteRule (\.xml)$ packages/Engine/starter.php
+RewriteRule ^([^\.]*)$ packages/Engine/starter.php
