@@ -4839,11 +4839,9 @@
 <script>
   $(document).ready(function () {
     document.querySelector('.js-premium-button').onclick = function () {
-      console.log(123);
       fbq('track', 'Lead');
     }
-    document.querySelector('.js-standart-button').onclick = function () {
-      console.log(123);
+    document.querySelector("#tariff-block > div.vp-tariff-panel.vp-tariff-panel-standart.mb-5 > div > div.col-12.col-md-4 > div").onclick = function () {
       fbq('track', 'Lead');
     }
   });
