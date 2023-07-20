@@ -4839,10 +4839,14 @@
 <script>
   $(document).ready(function () {
     document.querySelector('.js-premium-button').onclick = function () {
-      fbq('track', 'Lead');
+      document.querySelector('.tarifs__button-submit').onclick = function () {
+        fbq('track', 'Lead');
+      }
     }
     document.querySelector("#tariff-block > div.vp-tariff-panel.vp-tariff-panel-standart.mb-5 > div > div.col-12.col-md-4 > div").onclick = function () {
-      fbq('track', 'Lead');
+      document.querySelector('.tarifs__button-submit').onclick = function () {
+        fbq('track', 'Lead');
+      }
     }
   });
   $("#js-order-form").on("submit", function (e) {
