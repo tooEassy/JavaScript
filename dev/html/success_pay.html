@@ -41,21 +41,10 @@
       fbq('init', '278951927959360');
 
       fbq('track', 'Purchase');
-      function fbq(...args) {
-        // Проверяем, есть ли аргументы и необходимый тип события "Lead"
-        if (args.length >= 2 && args[0] === 'track' && args[1] === 'Lead') {
-          // Выполняем действия для события "Lead"
-          // Например, отправляем данные на сервер Facebook Pixel
-          console.log('Отслеживание события Lead:', args);
-          // Здесь можно добавить код для отправки данных на сервер Facebook Pixel
-        } else {
-          // Если это не событие "Lead", выполняем стандартное поведение функции fbq
-          console.log('Стандартное отслеживание:', args);
-          // Здесь можно добавить код для стандартного отслеживания событий через функцию fbq
-        }
-      }
     </script>
-
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=278951927959360&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Meta Pixel Code -->
   </head>
   <body>
