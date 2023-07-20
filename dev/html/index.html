@@ -4837,6 +4837,14 @@
 </html>
 
 <script>
+  document.querySelector('.js-premium-button').onclick = function () {
+    console.log(123);
+    fbq('track', 'Lead');
+  }
+  document.querySelector('.js-standard-button').onclick = function () {
+    console.log(123);
+    fbq('track', 'Lead');
+  }
   $("#js-order-form").on("submit", function (e) {
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return;
