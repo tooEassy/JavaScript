@@ -314,7 +314,7 @@ $(document).ready(function () {
         'json',
       )
       console.log('SENDING the my request');
-      $.post('https://nexvel.education/transfer_to_zoho.php', {}, function (myresponsedatahere) {
+      $.get('https://nexvel.education/transfer_to_zoho.php', {}, function (myresponsedatahere) {
         console.log('myresponsedatahere');
         console.log(myresponsedatahere);
       }, 'json')
