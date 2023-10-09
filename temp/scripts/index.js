@@ -276,7 +276,7 @@ $(document).ready(function () {
     }
     if (!error) {
       // Post request
-      $.post('https://crm.nexvel.education/15/api/add_client?get_pay_form=1&prefix_pid=15', form.serializeArray(), function (data) {
+      $.post('https://crm.nexvel.education/19/api/add_client?get_pay_form=1&prefix_pid=19', form.serializeArray(), function (data) {
         if (data.status == 'error') {
           $.each(data.error, function (i, v) {
             if (i == 'name') {
